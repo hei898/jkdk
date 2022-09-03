@@ -1,5 +1,6 @@
 from jkdk import Jkdk
 import os
+import time
 # import argparse
 
 # parser = argparse.ArgumentParser(description='填入学号和密码')
@@ -11,7 +12,7 @@ import os
 
 username_list = os.environ.get('username')
 password_list = os.environ.get('password')
-key_list = os.environ.get('key')
+key = os.environ.get('key')
 province = os.environ.get('province')
 city = os.environ.get('city')
 position = os.environ.get('position')
@@ -22,13 +23,11 @@ weidu = os.environ.get('weidu', '34.813699')
 
 username_list = username_list.split(',')
 password_list = password_list.split(",")
-key_list = key_list.split(",")
 
 for i in range(len(password_list)):
     
     username = username_list[i]
     password = password_list[i]
-    key = key_list[i]
     
     print(f'username={username}')
     print(f'password={password}')
@@ -44,3 +43,4 @@ for i in range(len(password_list)):
     m = Jkdk(username, password, key, province=province,
              city=city, position=position, myvs_26=myvs_26, jingdu=jingdu, weidu=weidu)
     m.jkdk()
+    time.sleep(240)
