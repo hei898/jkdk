@@ -11,8 +11,8 @@ on:
   pull_request:
     branches: [master]
   schedule:
-    - cron: "10 19,20 * * *" # 北京时间6点10分和7点10分
-
+    - cron: "30 16,18 * * *" # 北京时间6点10分和7点10分
+    - cron: "30 20 * * *"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
